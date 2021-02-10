@@ -39,8 +39,10 @@ public class App {
 		while(tokenizer.hasMoreElements()) {
 			System.out.println("CLIENT: "+tokenizer.nextElement());
 			String s1 = tokenizer.nextToken();
+			String s2 = tokenizer.nextToken();
 			System.out.println("");
 			StringTokenizer tokenizer2 = new StringTokenizer(s1,",");
+			StringTokenizer tokenizer3 = new StringTokenizer(s2,",");
 			while(tokenizer2.hasMoreElements()) {
 				
 				System.out.println("CLIENT: "+tokenizer2.nextElement());
@@ -50,6 +52,8 @@ public class App {
 		}
 		System.out.println("");
 
+		
+		System.out.println("");
 		
 	}
 		

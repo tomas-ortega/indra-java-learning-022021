@@ -39,17 +39,19 @@ public class App {
 		while(tokenizer.hasMoreElements()) {
 			System.out.println("CLIENT: "+tokenizer.nextElement());
 			String s1 = tokenizer.nextToken();
-			System.out.println("");
-			StringTokenizer tokenizer2 = new StringTokenizer(s1,",");
-			while(tokenizer2.hasMoreElements()) {
-				
-				System.out.println("CLIENT: "+tokenizer2.nextElement());
-				
-			}
+			System.out.println(s1);
 
 		}
 		System.out.println("");
 
+		StringTokenizer tokenizer2 = new StringTokenizer(inputData,",");
+		
+		while(tokenizer2.hasMoreElements()) {
+			
+			System.out.println("CLIENT: "+tokenizer2.nextElement());
+			
+		}
+		System.out.println("");
 		
 	}
 		
