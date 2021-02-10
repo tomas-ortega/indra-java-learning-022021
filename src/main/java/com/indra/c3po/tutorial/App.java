@@ -23,9 +23,10 @@ public class App
         StringTokenizer tokenizer = new StringTokenizer(inputData, "#");
         
         while(tokenizer.hasMoreElements()) {
+        	
             StringTokenizer client = new StringTokenizer((String) tokenizer.nextElement(), ",");
             while(client.hasMoreElements()) {
-            	//System.out.println(client.nextElement().toString().replace("=", ": ").replace("_", " "));
+            	
             	StringTokenizer data = new StringTokenizer((String) client.nextElement(), "=");
             	System.out.println(data.nextToken().toString().replace("_", " ").toUpperCase() + ": " + data.nextToken());
             	
