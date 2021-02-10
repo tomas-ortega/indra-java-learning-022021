@@ -1,0 +1,86 @@
+package com.indra.c3po.tutorial;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.MathContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        App myApp = new App();
+        //myApp.learnEqualsWithOperator();
+        //myApp.learnEqualsWithObject();
+        //myApp.learnCasting();
+        myApp.learnIterators();
+    }
+    
+    private void learnEqualsWithOperator() {
+    	int number1 = 0;
+    	int number2 = 0;
+    	
+    	System.out.println(number1 == number2);
+    }
+    
+    private void learnEqualsWithObject() {
+    	Integer number1 = 0;
+    	Integer number2 = 0;
+    	
+    	System.out.println(number1.equals(number2));
+    }
+    
+    private void learnCasting() {
+    	Integer number1 = 0;
+    	Long number1Long = 0L;
+    	BigInteger number1BigInteger = new BigInteger(String.valueOf(number1));
+    	
+    	Double number2 = 2.54;
+    	float number3 = 1.20f;
+    	BigDecimal number3BigDecimal = new BigDecimal(number2);
+    	BigDecimal number4BigDecimal = new BigDecimal(number3, MathContext.DECIMAL32);
+    	
+    	String stringNumber4 = "42";
+    	stringNumber4 = new String("21");
+    	
+    	number1 = new Integer("2");
+    	
+    	System.out.println("CASTING DE INTEGER A STRING: "+number1);
+    	System.out.println("CASTING DE INTEGER A STRING: "+number1.toString());
+    	System.out.println("CASTING DE STRING A INTEGER: "+Integer.valueOf(stringNumber4));
+       	System.out.println("CASTING DE STRING A DOUBLE: " + Double.valueOf(stringNumber4));
+       	System.out.println("CASTING DE STRING A FLOAT: "+ Float.valueOf(stringNumber4));
+       	System.out.println("CASTING DE FLOAT A STRING: "+number3);
+       	System.out.println("BIG INTEGER VALUE: "+number1BigInteger);
+       	System.out.println("BIG DECIMAL VALUE: "+number3BigDecimal);
+       	System.out.println("LEGACY CASTING ");
+       	
+       	double numberDoubleToCasting = 1.74;
+       	System.out.println((int)numberDoubleToCasting);//solo con tipos primitivos, no Object
+       	System.out.println(String.valueOf(numberDoubleToCasting));
+       	//System.out.println(numberDoubleToCasting);
+    	
+    }
+    
+    private void learnIterators() {
+    	Integer[] myNumberList = new Integer[5];
+    	
+    	for (int i=0; i<myNumberList.length; i++) {
+    		myNumberList[i]=i;
+    	}
+    	
+    	System.out.println("LISTA DESCENDENTE");
+    	for (int i=myNumberList.length-1; i>=0; i--)
+    	{
+    		System.out.println("POSITION: " + i + " VALUE: " + myNumberList[i]);
+    	}
+    	
+    	System.out.println("LISTA ASCENDENTE");
+    	for (int i=0; i<myNumberList.length; i++) {
+    		System.out.println("POSITION: " + i + " VALUE: " + myNumberList[i]);
+    	}
+    }
+}
