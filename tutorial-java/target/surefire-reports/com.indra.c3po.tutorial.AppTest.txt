@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.indra.c3po.tutorial.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 s - in com.indra.c3po.tutorial.AppTest

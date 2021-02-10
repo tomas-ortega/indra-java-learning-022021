@@ -1,0 +1,86 @@
+package com.indra.c3po.tutorial;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        App myApp = new App();
+        //myApp.learnEqualsWithOperator();
+        //myApp.learnEqualsWithObject();
+        //myApp.learnCasting();
+        myApp.learnIterators();
+    }
+    
+    private void learnEqualsWithOperator() {	
+    	int number1 = 0;
+    	int number2 = 0;
+    
+    	System.out.println(number1 == number2);
+    	
+    }
+    
+    
+    private void learnEqualsWithObject() {
+    	Integer number1 = 0;
+    	Integer number2 = 0;
+    	
+    	System.out.println(number1.equals(0));
+    	
+    }
+    
+    private void learnCasting() {
+    	Integer number1 = 0;
+    	Long number1Long = 0L;
+    	BigInteger number1BigInteger = new BigInteger(number1.toString());
+    	
+    	Double number2 = 2.54;
+    	Float number3 = 1.29F;
+    	BigDecimal number3BigDecimal = new BigDecimal(number2.toString());
+    	
+    	String stringNumber4 = "42";
+    	stringNumber4 = new String("21");
+    	
+    	//number1 = new Integer("2");
+    	number1 = 8;
+    	
+    	System.out.println("CASTING DE INTEGER A STRING " + number1);
+    	System.out.println("CASTING DE INTEGER A STRING " + number1.toString());
+    	System.out.println("CASTING DE STRING A INTEGER " + Integer.valueOf(stringNumber4));
+    	System.out.println("CASTING DE STRING A DOUBLE " + Double.valueOf(stringNumber4));
+    	System.out.println("CASTING DE STRING A FLOAT " + Float.valueOf(stringNumber4));
+    	System.out.println("CASTING DE FLOAT A STRING " + number3);
+    	System.out.println("BIG INTEGER VALUE: " + number1BigInteger);
+    	System.out.println("BIG DECIMAL VALUE: " + number3BigDecimal);
+    	
+    	
+    	double numberDoubleToCasting = 1.74;
+    	System.out.println((int) numberDoubleToCasting);
+    	System.out.println(String.valueOf(numberDoubleToCasting));
+    }
+    
+    public void learnIterators() {
+    	Integer[] myNumberList = new Integer[5];
+    	myNumberList[1]= 1;
+    	
+    	for(int i=0;i<myNumberList.length;i++) {
+    		System.out.println("POSITION: " + i + "VALUE: " + myNumberList[i]);
+    		
+    	}
+    	
+    	for(int i=0;i<myNumberList.length;i++) {
+    		System.out.println("POSITION: " + i + "VALUE: " + myNumberList[i]);
+    		
+    	}
+    	
+    	
+    }
+    
+    
+}
