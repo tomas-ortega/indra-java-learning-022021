@@ -31,42 +31,16 @@ public class App
     
     private void stringTokenizerAndSplitted() {
     	String inputData = "codigo_cliente=1,nombre_cliente=pako,apellido_cliente=jarls#codigo_cliente=2,nombre_cliente=juanito,apellido_cliente=jarls";
-    	
+
 		StringTokenizer tokenizer = new StringTokenizer(inputData, "#");
 
 		while (tokenizer.hasMoreElements()) {
 			
 			String datos = (String) tokenizer.nextElement();
 			ArrayList<String> datosList = new ArrayList<>(Arrays.asList(datos.split(",")));
-			
-			for (int i=0; i<datosList.size(); i++) {
-				StringTokenizer tokenizerSingleClient = new StringTokenizer(datosList.get(i), "=");
-				
-				while(tokenizerSingleClient.hasMoreElements()) {
-					String currentElement = tokenizerSingleClient.nextElement().toString();
-					
-					if (!tokenizerSingleClient.hasMoreElements()) {
-						switch (i) {
-							case 0:
-								System.out.println("CODIGO CLIENTE: " + currentElement);
-								break;
-							
-							case 1:
-								System.out.println("NOMBRE CLIENTE: " + currentElement);
-								break;
-								
-							case 2:
-								System.out.println("APELLIDO CLIENTE: " + currentElement);
-								break;
-	
-							default:
-								break;
-						}
-					}
-				}
-				
-				System.out.println("");
-			}
+			System.out.println(datosList.get(0));
+			System.out.println(datosList.get(1));
+			System.out.println(datosList.get(2));
 		}
     }
     
