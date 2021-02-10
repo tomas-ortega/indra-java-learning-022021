@@ -40,7 +40,7 @@ public class App
     			
     			while(tokenizer3.hasMoreElements()) {
     				
-    				System.out.println(tokenizer3.nextElement() + ": " + tokenizer3.nextElement());
+    				System.out.println((String.valueOf(tokenizer3.nextElement()).toUpperCase()).replace('_', ' ') + ": " + tokenizer3.nextElement());
     				
     			}
     			
