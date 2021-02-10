@@ -1,0 +1,62 @@
+package com.indra.c3po.tutorial;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        App myApp = new App();
+        
+        //myApp.learnEqualsWithOperator();
+        //myApp.learnEqualsWithObject();
+        myApp.learnCasting();
+    }
+    
+    private void learnEqualsWithOperator() {
+    	int number1 = 0;
+    	int number2 = 0;
+    	
+    	System.out.println(number1 == number2);
+    }
+    
+    private void learnEqualsWithObject() {
+    	Integer number1 = 0;
+    	Integer number2 = 0;
+    	
+    	System.out.println(number1.equals(0));
+    }
+    
+    private void learnCasting() {
+    	Integer number1 = 0;
+    	Long number1Long = 0L;
+    	BigInteger number1BigInteger = new BigInteger(number1.toString());
+    	
+    	Double number2 = 2.54;
+    	Float number3 = 1.29f;
+    	BigDecimal number3BigDecimal = new BigDecimal(number3);
+    	
+    	
+    	String stringNumber4 = "42";
+    	stringNumber4 = new String("21");
+    	
+    	//number1 = new Integer("2");
+    	number1 = 8;
+    	
+    	System.out.println("CASTING DE INTEGER A STRING: " + number1);
+    	System.out.println("CASTING DE INTEGER A STRING: " + number1.toString());
+    	System.out.println("CASTING DE STRING A INTEGER: " + Integer.valueOf(stringNumber4));
+    	System.out.println("CASTING DE STRING A DOUBLE: " + Double.valueOf(stringNumber4));
+    	System.out.println("CASTING DE STRING A FLOAT: " + Float.valueOf(stringNumber4));
+    	System.out.println("CASTING DE FLOAT A STRING: " + number3);
+    	System.out.println("BIG INTEGER VALUE: " + number1BigInteger);
+    	System.out.println("BIG DECIMAL VALUE: " + number3BigDecimal);
+    }
+}
+
+//Object
