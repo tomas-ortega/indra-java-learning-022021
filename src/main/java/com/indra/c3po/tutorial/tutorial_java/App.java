@@ -83,13 +83,12 @@ public class App {
 		while(tokenizer.hasMoreTokens()) {
 			String strToken = tokenizer.nextToken();
 			System.out.println("CLIENT: " + strToken);
-			
-			StringTokenizer tokenizer_interno= new StringTokenizer(strToken.replace("=",":"), ",");
-			System.out.println("CLIENT:");
+			StringTokenizer tokenizer_interno= new StringTokenizer(strToken.replace("="," : "), ",");
 			while (tokenizer_interno.hasMoreElements()) {
 				System.out.println(tokenizer_interno.nextElement());
-				
+
 			}
+			System.out.println();
 		}
 	}
 	
