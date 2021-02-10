@@ -1,0 +1,71 @@
+package com.indra.c3po.tutorial;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       App myApp = new App();
+       //myApp.learnEqualsWithOperator();       
+       //myApp.learnCasting();
+       myApp.learnIterators();
+    }
+    
+    private void learnEqualsWithOperator() {
+    	int num1 = 0;
+    	int num2 = 0;
+    	
+    	System.out.println(num1==num2);    	
+    }
+    
+    private void learnEEqualWithObject () {
+    	Integer num1 = 0;
+    	Integer num2 = 0;
+    	
+    	System.out.println (num1.equals(num2));
+    	
+    }
+    
+    private void learnCasting() {
+    	Integer num1 = 0 ;
+    	Long num1Long = 0L;
+    	BigInteger  num1BigInteger = new BigInteger (num1.toString());
+    	
+    	Double num2 = 2.54;
+    	Float num3 = 1.9F;
+    	BigDecimal num3BigDecimal = new BigDecimal (num2);
+    	 
+    	String stringnumber4 = "42";
+    	stringnumber4  = new String ("21");
+    	
+    	//num1 = new Integer("2");
+    	num1 = 8;
+	
+    	System.out.println("Casting de Integer a String: " + num1);
+    	System.out.println("Casting de Integer a String: " + num1.toString());
+    	System.out.println("Casting de String a Integer: " + Integer.valueOf(stringnumber4));
+    	System.out.println("Casting de String a Double: " + Double.valueOf(stringnumber4));
+    	System.out.println("Casting de String a Float: " + Float.valueOf(stringnumber4));
+    	System.out.println("Casting de Float a Integer: " + num3);
+    	System.out.println("Big Integer value: " + num1BigInteger);
+    	System.out.println("Big Integer value: " + num3BigDecimal);
+    	
+    }    
+    //1º rellenar todos los datos
+    // ver en pantalla orden ascendente
+    // ver en prden descendentes
+    
+    public void learnIterators() {
+    	Integer[] myNumberList = new Integer [5];
+    	for (int i=0;i<myNumberList.length;i++) {
+    		myNumberList[i]=i;
+    		System.out.println("Position: " + i + " VALUE : " + myNumberList[i]);
+    	}
+    }
+}

@@ -1,0 +1,26 @@
+package com.indra.c3po.tutorial;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       App myApp = new App();
+       myApp.learnEqualsWithOperator();
+       
+    }
+    
+    private void learnEqualsWithOperator() {
+    	int num1 = 0;
+    	int num2 = 0;
+    	
+    	System.out.println(num1==num2);    	
+    }
+    
+    
+    
+    
+}

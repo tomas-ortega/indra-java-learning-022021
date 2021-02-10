@@ -1,0 +1,49 @@
+package com.indra.c3po.tutorial;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       App myApp = new App();
+       //myApp.learnEqualsWithOperator();       
+       myApp.learnCasting();
+    }
+    
+    private void learnEqualsWithOperator() {
+    	int num1 = 0;
+    	int num2 = 0;
+    	
+    	System.out.println(num1==num2);    	
+    }
+    
+    private void learnEEqualWithObject () {
+    	Integer num1 = 0;
+    	Integer num2 = 0;
+    	
+    	System.out.println (num1.equals(num2));
+    	
+    }
+    
+    private void learnCasting() {
+    	Integer num1 = 0 ;
+    	Double num2 = 2.54;
+    	Float num3 = 1.9F;
+    	 
+    	String stringnumber4 = "42";
+    	stringnumber4  = new String ("21");
+    	
+    	num1 = new Integer("2");
+	
+    	System.out.println("Casting de Integer a String :" + num1);
+    	System.out.println("Casting de Integer a String :" + num1.toString());
+    	  
+    
+    }
+    
+    
+    
+}
