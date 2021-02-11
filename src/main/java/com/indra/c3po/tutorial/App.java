@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.StringTokenizer;
 
+import com.indra.c3po.tutorial.domain.PatientDTO;
+
 /**
  * Hello world!
  *
@@ -33,6 +35,11 @@ public class App
             }
             System.out.println("");
         }
+    }
+    
+    private void learnClasses() {
+    	PatientDTO singlePatient = new PatientDTO();
+    	
     }
     
     private void learnEquals() {
