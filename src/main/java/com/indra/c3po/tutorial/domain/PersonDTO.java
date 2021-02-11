@@ -9,11 +9,11 @@ public class PersonDTO {
 		this.name = null;
 	}
 	
-	public Integer getDni() {
+	protected Integer getDni() {
 		return dni;
 	}
 	
-	public void setDni(Integer id) {
+	public final void setDni(Integer dni) {
 		this.dni = dni;
 	}
 	
@@ -23,6 +23,14 @@ public class PersonDTO {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void setName(String name, Boolean toUpperCase) {
+		if (toUpperCase) {
+			this.name = name.toUpperCase();
+		} else {
+			this.name = name.toLowerCase();
+		}
 	}
 
 }

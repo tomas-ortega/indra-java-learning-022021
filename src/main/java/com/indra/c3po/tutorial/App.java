@@ -10,6 +10,8 @@ import java.util.Random;
 import java.util.StringTokenizer;
 
 import com.indra.c3po.tutorial.domain.PatientDTO;
+import com.indra.c3po.tutorial.domain.PatientOncologycalDTO;
+import com.indra.c3po.tutorial.domain.PersonDTO;
 
 /**
  * Hello world!
@@ -20,6 +22,49 @@ public class App
     public static void main( String[] args )
     {
     	App myApp = new App();
+    	myApp.learnClone();
+    	
+    }
+    
+    private void learnClone() {
+    	PatientDTO singlePatient1 = new PatientDTO();
+    	singlePatient1.setDni(4);
+    	
+    	PatientDTO singlePatient2 = null;
+    	
+    	try {
+			singlePatient2 = (PatientDTO) singlePatient1.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	//singlePatient2.setDni(1);
+    	
+    	System.out.println("patient 1: " + singlePatient1.getDni());
+    	System.out.println("patient 2: " + singlePatient2.getDni());
+    	System.out.println(singlePatient2.equals(singlePatient1));
+    }
+    
+    private void learnClasses() {
+    	PatientDTO singlePatient = new PatientDTO();
+    	PersonDTO singlePerson = new PersonDTO();
+    	PatientOncologycalDTO singleOnco = new PatientOncologycalDTO();
+    	
+    	singlePatient.setName("Paquito");
+    	System.out.println(singlePatient.getDni());
+    	
+    	singlePerson.setName("Tommy", false);
+    	//singlePerson.setDni(3);
+    	
+    	singleOnco.setName("Luis");
+    	
+    	System.out.println("Patient name: " + singlePatient.getName());
+    	System.out.println("Person name: " + singlePerson.getName());
+    	System.out.println("Onco name: " + singleOnco.getName());
+    }
+    
+    private void ejercicioTokens() {
+    	
     	String inputData = "codigo_cliente=1,nombre_cliente=pako,apellido_cliente=jarls#codigo_cliente=2,nombre_cliente=juanito,apellido_cliente=jarls";
         
         StringTokenizer tokenizer = new StringTokenizer(inputData, "#");
@@ -35,11 +80,6 @@ public class App
             }
             System.out.println("");
         }
-    }
-    
-    private void learnClasses() {
-    	PatientDTO singlePatient = new PatientDTO();
-    	
     }
     
     private void learnEquals() {

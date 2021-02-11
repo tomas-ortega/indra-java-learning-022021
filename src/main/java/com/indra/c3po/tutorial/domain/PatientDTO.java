@@ -1,6 +1,6 @@
 package com.indra.c3po.tutorial.domain;
 
-public class PatientDTO extends PersonDTO{
+public class PatientDTO extends PersonDTO implements Cloneable{
 	private String nhc;
 
 	public String getNhc() {
@@ -14,6 +14,16 @@ public class PatientDTO extends PersonDTO{
 	@Override
 	public String getName() {
 		return this.name.toUpperCase();
-		
 	}
+	
+	@Override
+	public Integer getDni() {
+		return super.getDni();
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+	}
+	
 }
