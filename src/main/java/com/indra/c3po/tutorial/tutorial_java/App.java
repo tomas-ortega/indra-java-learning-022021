@@ -10,6 +10,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
+import com.indra.c3po.tutorial.tutorial_java.domain.PatientDTO;
+import com.indra.c3po.tutorial.tutorial_java.domain.PatientOncologycalDTO;
+import com.indra.c3po.tutorial.tutorial_java.domain.PersonDTO;
+
 /**
  * Hello world!
  *
@@ -22,7 +26,78 @@ public class App {
 		// app.learnIterators();
 		//app.learnIteratorsStream();
 		//app.stringVsStringBuilder();
-		app.stringTokenizerAndSplitter();
+		//app.stringTokenizerAndSplitter();
+		//app.learnClasses();
+		app.learnClone();
+	}
+	
+	private void learnClone() {
+		PatientDTO singlePatient1 = new PatientDTO();
+		singlePatient1.setDNI(1);
+		
+		PatientDTO singlePatient2 = null;
+		
+		try {
+			singlePatient2 = (PatientDTO) singlePatient1.clone();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		
+		singlePatient2.setDNI(2);
+		
+		System.out.println("PATIENT1 DNI: " + singlePatient1.getDNI());
+		System.out.println("PATIENT2 DNI: " + singlePatient2.getDNI());
+		
+		System.out.println("RAW PATIENT1:" + singlePatient1);
+	}
+	
+	private void learnClasses() {
+		PatientDTO singlePatient = new PatientDTO();
+		PersonDTO singlePerson = new PersonDTO();
+		PatientOncologycalDTO singleOncologycalPatient = new PatientOncologycalDTO(1,"nombre");
+		
+		singlePatient.setName("Manué");
+		singlePatient.setDNI(1);
+		System.out.println(singlePatient.getDNI());
+		
+		singlePerson.setName("Juanico");
+		singlePerson.setDNI(1);
+		//singlePerson.getDNI();
+		
+		singleOncologycalPatient.setName("2 telediarios");
+		
+		System.out.println("PERSON NAME: " + singlePerson.getName());
+		System.out.println("PATIENT NAME: " + singlePatient.getName());
+		System.out.println("PATIENT ONCOLOGYCAL NAME: " + singleOncologycalPatient.getName());
+	
+		PersonDTO.checkDNI(1231231);
+		
+		PersonDTO personConstructor = new PersonDTO(5, "pakito");
+	
+	}
+	
+	private void learnFinal() {
+		final Integer myNumber = 0;
+		/* No podría realizar la asignación porque el valor de la variable es inmutable*/
+		//MYNUMBER = 3;
+		
+		this.changeFinalValue(myNumber);
+		
+		System.out.println(myNumber);
+		
+		//Probando el final con un array
+		final ArrayList<Integer> finalNumbers = new ArrayList<>();
+		finalNumbers.add(3);
+		finalNumbers.add(2);
+		finalNumbers.remove(1);
+		System.out.println("ARRAY FINAL SIZE: " + finalNumbers.size());
+		
+	}
+	
+	private void changeFinalValue(Integer numberToChange) {
+		numberToChange++;
+		System.out.println("FINAL CHANGE VALUE: " + numberToChange);
 	}
 	
 	private Integer askJumpers() {
