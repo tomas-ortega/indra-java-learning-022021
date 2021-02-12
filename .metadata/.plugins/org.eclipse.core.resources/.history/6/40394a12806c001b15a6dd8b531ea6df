@@ -1,0 +1,26 @@
+package com.indra.c3po.tutorial.business;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DbConnection {
+	private static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/his"; 
+	private static final String USER = "root";
+	private static final String PASSWORD_DB = "lSw52GV&KV:4";
+	
+	public static Connection getDbConnection() throws Exception {
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection newConnection = null;
+		
+		newConnection = DriverManager.getConnection(CONNECTION_STRING, USER, PASSWORD_DB);
+		
+		return newConnection;
+	}
+	
+	
+	public static void closeConnection(Connection connectionReference) throws Exception {
+		connectionReference.close();
+	}
+	
+}

@@ -1,0 +1,13 @@
+package com.indra.c3po.tutorial.business;
+
+import com.indra.c3po.tutorial.domain.PatientDTO;
+
+public class PatientBS extends BaseBsAbstract {
+
+	@Override
+	Object search(Object searchCriteria) {
+		PatientDTO patientFound = new PatientDTO();
+		
+		return patientFound;
+	}
+}

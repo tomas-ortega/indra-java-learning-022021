@@ -1,0 +1,19 @@
+package com.indra.c3po.tutorial.domain;
+
+public class PatientOncologycalDTO extends PatientDTO {
+	private Integer phase;
+	
+	public PatientOncologycalDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	
+	
+	@Override
+	public String getName() {
+		return "ONCOLOGYCAL: " + this.name.toUpperCase();
+	}
+}

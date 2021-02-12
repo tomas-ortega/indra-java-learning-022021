@@ -1,0 +1,10 @@
+package com.indra.c3po.tutorial.domain;
+
+public class PatientDTO extends PersonDTO {
+	private String nhc;
+
+	
+	public String getName() {
+		return this.dni;
+	}
+}

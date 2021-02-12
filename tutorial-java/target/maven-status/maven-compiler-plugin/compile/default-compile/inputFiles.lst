@@ -1,1 +1,10 @@
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/domain/PatientDTO.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/business/PatientBS.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/business/DbConnection.java
 /home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/App.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/business/InterfaceBS.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/domain/PersonDTO.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/business/BaseBsAbstract.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/domain/PatientOncologycalDTO.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/domain/OrderPatientByDniComparator.java
+/home/java-8/projects/tutorial-java/src/main/java/com/indra/c3po/tutorial/dao/PatientDAO.java

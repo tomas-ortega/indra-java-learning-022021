@@ -1,0 +1,5 @@
+package com.indra.c3po.tutorial.business;
+
+public interface InterfaceBS {
+
+}

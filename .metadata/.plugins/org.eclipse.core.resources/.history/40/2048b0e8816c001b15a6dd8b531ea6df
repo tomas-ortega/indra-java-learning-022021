@@ -1,0 +1,27 @@
+package com.indra.c3po.tutorial.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.indra.c3po.tutorial.domain.PatientDTO;
+
+public class PatientDAO {
+
+	public void insert(PatientDTO patientToInsert, Connection connection) throws SQLException {
+		StringBuilder insertSql = new StringBuilder();
+		PreparedStatement statement = null;
+		
+		try {
+			insertSql.append("INSERT INTO ");
+			insertSql.append("patient");
+			insertSql.append("(dni,name,nhc)");
+			insertSql.append(" VALUES (?,?,?)");
+			
+			
+			
+		} catch(SQLException ex) {
+			throw ex;
+		}
+	}
+}

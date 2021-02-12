@@ -1,0 +1,31 @@
+package com.indra.c3po.tutorial.domain;
+
+public class PatientDTO extends PersonDTO implements Cloneable {
+	
+	private String nhc;
+
+	public PatientDTO() {
+		super(4, "pako");
+		this.nhc = null;
+	}
+	
+	@Override
+	public String getName() {
+		return this.name.toUpperCase();
+	}
+	
+	@Override
+	public Integer getDni() {
+		return super.getDni();
+	}
+	
+
+	public static Boolean checkDni(Integer number) {
+		return PersonDTO.checkDni(number);
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+}

@@ -1,0 +1,10 @@
+package com.indra.c3po.tutorial.business;
+
+public abstract class BaseBsAbstract {
+	
+	abstract Object search(Object searchCriteria);
+	
+	public Boolean checkSumDni(Integer dni) {
+		return true;
+	}
+}

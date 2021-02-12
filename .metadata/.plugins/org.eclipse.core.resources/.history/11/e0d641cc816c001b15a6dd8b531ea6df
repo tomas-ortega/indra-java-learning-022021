@@ -1,0 +1,16 @@
+package com.indra.c3po.tutorial.dao;
+
+import java.sql.SQLException;
+
+import com.indra.c3po.tutorial.domain.PatientDTO;
+
+public class PatientDAO {
+
+	public void insert(PatientDTO patientToInsert) throws SQLException {
+		try {
+			
+		} catch(SQLException ex) {
+			throw ex;
+		}
+	}
+}

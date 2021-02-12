@@ -10,15 +10,23 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import com.indra.c3po.tutorial.business.PatientBS;
+import com.indra.c3po.tutorial.domain.OrderPatientByDniComparator;
+import com.indra.c3po.tutorial.domain.PatientDTO;
+import com.indra.c3po.tutorial.domain.PatientOncologycalDTO;
+import com.indra.c3po.tutorial.domain.PersonDTO;
+
 /**
  * Hello world!
  *
  */
 public class App 
-{
-    public static void main( String[] args )
+{	
+    public static void main( String[] args ) throws CloneNotSupportedException, Exception
     {
         App myApp = new App();
+        
+        //lSw52GV&KV:4
         
         //myApp.learnEqualsWithOperator();
         //myApp.learnEqualsWithObject();
@@ -26,7 +34,143 @@ public class App
         //myApp.learnInterators();
         //myApp.learnIteratorsStream();
         //myApp.stringVsStringBuilder();
-        myApp.stringTokenizerAndSplitted();
+        //myApp.stringTokenizerAndSplitted();
+        //myApp.learnFinal();
+        //myApp.learClasses();
+        //myApp.learnClone();
+        //myApp.learnComparator();
+        //myApp.learnConnectionDb();
+    }
+    
+    private void callBsToInsertPatient() throws Exception {
+    	PatientBS patientBs = new PatientBS();
+    	
+    	PatientDTO newPatient = null;
+    	
+    	newPatient = new PatientDTO();
+		newPatient.setDni(1);
+		newPatient.setName("pako");
+		newPatient.setNhc("NHC1");
+    	
+    	patientBs.insert(newPatient);
+    }
+  
+    private void callBsSearchPatient() throws Exception {
+    	PatientBS patientBs = new PatientBS();
+    	
+    	PatientDTO patientFound = null;
+    	
+    	patientFound = patientBs.searchSinglePatient(1);
+    }
+    
+    private void learnComparator() {
+    	PatientDTO singlePatient1 = new PatientDTO();
+    	PatientDTO singlePatient2 = new PatientDTO();
+    	
+    	singlePatient1.setNhc("NHC1");
+    	singlePatient2.setNhc("NHC1");
+    	System.out.println("SON IGUALES (0): " + singlePatient1.compareTo(singlePatient2));
+    	
+    	singlePatient1.setNhc("NHC1");
+    	singlePatient2.setNhc("NHC2");
+    	System.out.println("EL PRIMERO ES MENOR QUE EL SEGUNDO (-1): " + singlePatient1.compareTo(singlePatient2));
+    	
+    	singlePatient1.setNhc("NHC1");
+    	singlePatient1.setDni(2);
+    	
+    	singlePatient2.setNhc("NHC2");
+    	singlePatient2.setDni(1);
+    	System.out.println("EL SEGUNDO ES MENOR QUE EL PRIMERO (+1): " + singlePatient1.compareTo(singlePatient2));
+    	
+    	List<PatientDTO> patientList = new ArrayList<>();
+    	patientList.add(singlePatient1);
+    	patientList.add(singlePatient2);
+    	
+    	Collections.sort(patientList);
+    	System.out.println("PATIENT LIST NATURAL ORDER: " + patientList);
+    	
+    	Collections.sort(patientList, Collections.reverseOrder());
+    	System.out.println("PATIENT LIST REVERSE ORDER: " + patientList);
+    	
+    	Collections.sort(patientList, new OrderPatientByDniComparator());
+    	System.out.println("PATIENT LIST DNI ORDER: " + patientList);
+    	
+    	singlePatient1.setNhc("NHC1");
+    	singlePatient1.setDni(1);
+    	
+    	singlePatient2.setNhc("NHC1");
+    	singlePatient2.setDni(1);
+    	
+    	System.out.println("¿PATIENT1 == PATIENT2?: " + singlePatient1.equals(singlePatient2));
+    }
+    
+    private void learnClone() throws CloneNotSupportedException {
+    	PatientDTO singlePatient1 = new PatientDTO();
+    	singlePatient1.setDni(4);
+    	
+    	PatientDTO singlePatient2 = null;
+    	//singlePatient2 = singlePatient1;
+    	singlePatient2 = (PatientDTO) singlePatient1.clone();
+    	
+    	singlePatient2.setDni(0);
+    	
+    	System.out.println("PATIENT1 DNI: " + singlePatient1.getDni());
+    	System.out.println("PATIENT2 DNI: " + singlePatient2.getDni());
+    	
+    	System.out.println("RAW PATIENT1: " + singlePatient1);
+    }
+    
+    private void learClasses() {
+    	PatientOncologycalDTO singleOncologycalPatient = new PatientOncologycalDTO();
+    	PatientDTO singlePatient = new PatientDTO();
+    	PersonDTO singlePerson = new PersonDTO();
+    	
+    	
+    	singlePatient.setName("Pako");
+    	singlePatient.setDni(1);
+    	singlePatient.getDni();
+    	
+    	singlePerson.setName("Juanito");
+    	singlePerson.setDni(1);
+    	//singlePerson.getDni();
+    	
+    	singleOncologycalPatient.setName("2 telediarios");
+    	
+    	System.out.println("PERSON NAME: " + singlePerson.getName());
+    	System.out.println("PATIENT NAME: " + singlePatient.getName());
+    	System.out.println("ONCOLOGYCAL PATIENT: " + singleOncologycalPatient.getName());
+    	
+    	PersonDTO.checkDni(57484743);
+    	
+    	PersonDTO personConstructor = new PersonDTO(5, "pakito");
+    	
+    }
+    
+    private void learnFinal() {
+    	final Integer myNumber = 0;
+    	
+    	/*No podría realizar la asignación por que el valor de la variable es inmutable*/
+    	//myNumber = new Integer(0);
+    	
+    	this.changeFinalValue(myNumber);
+    	
+    	System.out.println(myNumber);
+    	
+    	
+    	/*Probando el final con un array*/
+    	final List<Integer> finalNumbers = new ArrayList<>();
+    	
+    	finalNumbers.add(3);
+    	finalNumbers.add(2);
+    	finalNumbers.remove(1);
+    	
+    	System.out.println("ARRAY FINAL SIZE: " + finalNumbers.size());
+    }
+    
+    private void changeFinalValue(Integer numberToChange) {
+    	numberToChange++;
+    	
+    	System.out.println("CHANGE FINAL VALUE: " + numberToChange);
     }
     
     private void stringTokenizerAndSplitted() {

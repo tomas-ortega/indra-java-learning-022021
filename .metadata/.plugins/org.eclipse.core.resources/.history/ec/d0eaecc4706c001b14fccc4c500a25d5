@@ -1,0 +1,13 @@
+package com.indra.c3po.tutorial.domain;
+
+import java.util.Comparator;
+
+public class OrderPatientByDniComparator implements Comparator<PatientDTO> {
+
+	@Override
+	public int compare(PatientDTO arg0, PatientDTO arg1) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

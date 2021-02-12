@@ -1,0 +1,6 @@
+package com.indra.c3po.tutorial.business;
+
+public interface InterfaceBS {
+	Integer insert(Object object) throws Exception;
+	Integer delete(Integer id) throws Exception;
+}

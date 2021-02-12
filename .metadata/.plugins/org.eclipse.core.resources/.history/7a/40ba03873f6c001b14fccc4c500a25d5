@@ -1,0 +1,16 @@
+package com.indra.c3po.tutorial.domain;
+
+public class PatientDTO extends PersonDTO {
+	private String nhc;
+
+	
+	@Override
+	public String getName() {
+		return this.name.toUpperCase();
+	}
+	
+	@Override
+	protected Integer getDni() {
+		return super.getDni();
+	}
+}

@@ -1,0 +1,28 @@
+package com.indra.c3po.tutorial.business;
+
+import com.indra.c3po.tutorial.domain.PatientDTO;
+
+public class PatientBS extends BaseBsAbstract implements InterfaceBS {
+
+	@Override
+	Object search(Object searchCriteria) {
+		PatientDTO patientFound = new PatientDTO();
+		
+		patientFound.setDni(3);
+		patientFound.setName("Pako");
+		
+		return patientFound;
+	}
+
+	@Override
+	public Integer insert(Object object) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer delete(Integer id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

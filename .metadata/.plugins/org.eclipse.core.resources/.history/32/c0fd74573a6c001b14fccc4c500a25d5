@@ -1,0 +1,10 @@
+package com.indra.c3po.tutorial.domain;
+
+public class PatientOncologycalDTO extends PatientDTO {
+	
+	
+	@Override
+	public String getName() {
+		return this.name.toUpperCase();
+	}
+}
